@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudyFlow AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">S</div>
+          <div>
+            <div class="brand-name">StudyFlow AI</div>
+          </div>
+        </div>
+        <div class="top-actions">
+          <button class="secondary-button" id="resetButton">Start Over</button>
+        </div>
+      </header>
+
+      <main class="app-layout">
+        <section class="hero-card">
+          <div class="hero-copy">
+            <p class="eyebrow">Study smarter</p>
+            <h1>Turn study material into a smarter revision plan.</h1>
+            <p class="hero-subtext">
+              Upload your lecture notes or study material and get concise revision notes plus a 5-question practice quiz grounded in the same source.
+            </p>
+            <div class="cta-row">
+              <label class="primary-button upload-label">
+                <input id="fileInput" type="file" />
+                Upload Study Material
+              </label>
+              <button class="secondary-button" id="youtubeButton" type="button">Paste YouTube Link</button>
+            </div>
+            <div class="subject-row">
+              <label class="subject-label" for="subjectInput">
+                Subject / course (optional)
+              </label>
+              <input id="subjectInput" type="text" placeholder="e.g. Data Structures, Biology, History" />
+            </div>
+            <div class="flow-row">
+              <span>UPLOAD</span>
+              <span>↓</span>
+              <span>UNDERSTAND</span>
+              <span>↓</span>
+              <span>REVISE</span>
+              <span>↓</span>
+              <span>PRACTICE</span>
+            </div>
+            <ul class="feature-list">
+              <li>Structured revision notes</li>
+              <li>5-question practice quiz</li>
+              <li>Instant score and explanations</li>
+            </ul>
+          </div>
+          <div class="hero-preview">
+            <div class="preview-card">
+              <div class="preview-header">
+                <span class="pill success">Ready</span>
+                <span class="preview-meta">Study-ready transformation</span>
+              </div>
+              <div class="preview-body">
+                <div class="preview-section">
+                  <h3>Revision Notes</h3>
+                  <ul>
+                    <li>Overview</li>
+                    <li>Key Concepts</li>
+                    <li>Exam-Focused Points</li>
+                  </ul>
+                </div>
+                <div class="preview-section">
+                  <h3>Practice Quiz</h3>
+                  <ul>
+                    <li>Exactly 5 questions</li>
+                    <li>Answer explanations</li>
+                    <li>Score summary</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel upload-panel" id="uploadPanel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Step 1</p>
+              <h2>Study Material</h2>
+            </div>
+          </div>
+          <div class="upload-zone" id="uploadZone">
+            <div class="upload-icon">↑</div>
+            <p>Drag and drop or click to upload</p>
+            <small>PDF, DOCX, PPTX, PNG, JPG</small>
+          </div>
+          <div id="uploadStatus" class="upload-status"></div>
+          <div id="fileList" class="file-list"></div>
+        </section>
+
+        <section class="panel hidden" id="resultsPanel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Step 2</p>
+              <h2>Revision Notes</h2>
+            </div>
+            <div class="action-group">
+              <button class="secondary-button" id="examPaperButton" type="button">Generate Exam Paper</button>
+              <button class="secondary-button" id="downloadNotesButton" type="button">Download Notes</button>
+              <button class="secondary-button" id="downloadQuizButton" type="button">Download Quiz</button>
+              <button class="secondary-button" id="copyNotesButton" type="button">Copy Notes</button>
+              <button class="secondary-button" id="practiceButton" type="button">Practice Quiz</button>
+            </div>
+          </div>
+          <div id="notesContainer" class="notes-container"></div>
+        </section>
+
+        <section class="panel hidden" id="quizPanel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Step 3</p>
+              <h2>Practice Quiz</h2>
+            </div>
+          </div>
+          <div id="quizContainer" class="quiz-container"></div>
+        </section>
+
+        <section class="panel hidden" id="scorePanel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Step 4</p>
+              <h2>Your Score</h2>
+            </div>
+          </div>
+          <div id="scoreContainer" class="score-container"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
