@@ -53,7 +53,7 @@ StudyFlow AI is a polished single-page study assistant built for a hackathon dem
 From the project root:
 
 ```powershell
-uvicorn app.main:app --reload
+.\.venv\Scripts\python.exe -m uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
 Then open:
